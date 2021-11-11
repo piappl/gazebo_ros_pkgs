@@ -264,8 +264,8 @@ void GazeboRosP3D::UpdateChild()
         // get inertial Rates
         // Get Pose/Orientation
 #if GAZEBO_MAJOR_VERSION >= 8
-        ignition::math::Vector3d vpos = this->link_->WorldLinearVel();
-        ignition::math::Vector3d veul = this->link_->WorldAngularVel();
+        ignition::math::Vector3d vpos = this->link_->RelativeLinearVel();
+        ignition::math::Vector3d veul = this->link_->RelativeAngularVel();
 
         pose = this->link_->WorldPose();
 #else
